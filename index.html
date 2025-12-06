@@ -4,7 +4,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy Policy - TeddyBuddy AI</title>
+    <meta name="description" content="Privacy Policy for TeddyBuddy AI, explaining how we collect, use, and protect your data.">
     <style>
+        :root {
+            /* App theme colors */
+            --primary: #6750A4;
+            --primary-container: #EADDFF;
+            --on-primary: #FFFFFF;
+            --on-primary-container: #21005E;
+
+            --secondary: #625B71;
+            --secondary-container: #E8DEF8;
+            --on-secondary: #FFFFFF;
+            --on-secondary-container: #1E192B;
+
+            --error: #B3261E;
+            --error-container: #F9DEDC;
+            --on-error: #FFFFFF;
+            --on-error-container: #410E0B;
+
+            --background: #FFFBFE;
+            --on-background: #1C1B1F;
+            --surface: #FFFBFE;
+            --on-surface: #1C1B1F;
+
+            --outline: #79747E;
+            --outline-variant: #CAC4D0;
+            --surface-variant: #E7E0EC;
+
+            /* Page tokens */
+            --bg-gradient-start: #FFFBFE;
+            --bg-gradient-end: #EADDFF;
+            --text-main: #1C1B1F;
+            --text-muted: #79747E;
+            --border-subtle: #CAC4D0;
+            --card-bg: #FFFBFE;
+            --highlight-bg: #F9DEDC;
+            --highlight-border: #B3261E;
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -12,304 +50,436 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            background: radial-gradient(circle at top left, var(--bg-gradient-start), var(--bg-gradient-end));
             min-height: 100vh;
-            padding: 40px 20px;
-            line-height: 1.6;
+            padding: 40px 16px;
+            line-height: 1.7;
+            color: var(--text-main);
+        }
+
+        .page-wrapper {
+            max-width: 960px;
+            margin: 0 auto;
         }
 
         .container {
-            max-width: 900px;
-            margin: 0 auto;
-            background: white;
-            border-radius: 20px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            background: var(--card-bg);
+            border-radius: 24px;
+            box-shadow: 0 18px 60px rgba(15, 23, 42, 0.12);
             overflow: hidden;
+            border: 1px solid rgba(202, 196, 208, 0.8); /* outline-variant */
         }
 
         .header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 60px 40px;
-            text-align: center;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: var(--on-primary);
+            padding: 48px 40px 40px;
+            text-align: left;
+            position: relative;
+        }
+
+        .header::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at top right, rgba(255, 255, 255, 0.14), transparent 55%);
+            pointer-events: none;
+        }
+
+        .header-inner {
+            position: relative;
+            z-index: 1;
+        }
+
+        .logo-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 10px;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.18);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            backdrop-filter: blur(8px);
         }
 
         .header h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
+            font-size: 1.9rem;
             font-weight: 700;
+            letter-spacing: 0.03em;
+        }
+
+        .header h2 {
+            font-size: 1rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.18em;
+            opacity: 0.95;
+            margin-top: 4px;
         }
 
         .effective-date {
-            font-size: 1.1em;
+            font-size: 0.95rem;
             opacity: 0.9;
-            margin-top: 10px;
+            margin-top: 18px;
         }
 
         .content {
-            padding: 50px 40px;
+            padding: 40px 40px 32px;
         }
 
         .intro {
-            font-size: 1.1em;
-            color: #555;
+            font-size: 1.02rem;
+            color: var(--text-muted);
             margin-bottom: 40px;
-            padding: 25px;
-            background: #f8f9fa;
-            border-left: 4px solid #667eea;
-            border-radius: 8px;
+            padding: 20px 24px;
+            background: var(--surface-variant);
+            border-radius: 14px;
+            border: 1px solid var(--outline-variant);
+        }
+
+        .intro p + p {
+            margin-top: 10px;
         }
 
         .section {
-            margin-bottom: 40px;
+            margin-bottom: 32px;
+        }
+
+        .section:last-of-type {
+            margin-bottom: 0;
         }
 
         .section h2 {
-            color: #667eea;
-            font-size: 1.8em;
-            margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 3px solid #667eea;
+            color: var(--primary);
+            font-size: 1.35rem;
+            margin-bottom: 16px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--outline-variant);
+            font-weight: 600;
         }
 
         .section h3 {
-            color: #764ba2;
-            font-size: 1.3em;
-            margin: 25px 0 15px 0;
+            color: var(--secondary);
+            font-size: 1.05rem;
+            margin: 20px 0 10px;
+            font-weight: 600;
         }
 
         .section p {
-            color: #444;
-            margin-bottom: 15px;
-            font-size: 1.05em;
+            color: var(--text-main);
+            margin-bottom: 10px;
+            font-size: 0.98rem;
         }
 
         .section ul {
-            margin-left: 25px;
-            margin-bottom: 15px;
+            margin-left: 20px;
+            margin-bottom: 10px;
+            padding-left: 4px;
         }
 
         .section li {
-            color: #444;
-            margin-bottom: 10px;
-            font-size: 1.05em;
+            color: var(--text-main);
+            margin-bottom: 6px;
+            font-size: 0.96rem;
+        }
+
+        .section li::marker {
+            color: var(--primary);
         }
 
         .highlight-box {
-            background: #fff3cd;
-            border-left: 4px solid #ffc107;
-            padding: 20px;
-            margin: 20px 0;
-            border-radius: 8px;
+            background: var(--highlight-bg);
+            border-left: 4px solid var(--highlight-border);
+            border-radius: 12px;
+            padding: 18px 20px;
+            margin: 18px 0 6px;
+            font-size: 0.97rem;
+        }
+
+        .highlight-box p {
+            margin-bottom: 10px;
         }
 
         .contact-box {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 30px;
-            border-radius: 15px;
-            text-align: center;
+            background: linear-gradient(
+                135deg,
+                var(--primary-container),
+                var(--secondary-container)
+            );
+            color: var(--on-primary-container);
+            padding: 26px 22px;
+            border-radius: 18px;
+            text-align: left;
             margin-top: 40px;
+            border: 1px solid rgba(98, 91, 113, 0.25);
         }
 
         .contact-box h2 {
-            color: white;
+            color: var(--on-primary-container);
             border: none;
-            margin-bottom: 20px;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            font-weight: 600;
+        }
+
+        .contact-box p {
+            margin-bottom: 10px;
+            font-size: 0.96rem;
+            color: var(--on-primary-container);
         }
 
         .contact-info {
-            font-size: 1.2em;
-            margin: 10px 0;
+            font-size: 0.98rem;
+            margin: 4px 0;
+        }
+
+        .contact-info a {
+            color: var(--secondary);
+            text-decoration: none;
+            border-bottom: 1px solid rgba(98, 91, 113, 0.4);
+        }
+
+        .contact-info a:hover {
+            border-bottom-color: rgba(98, 91, 113, 0.85);
         }
 
         .footer {
             text-align: center;
-            padding: 30px;
-            background: #f8f9fa;
-            color: #666;
-            font-size: 0.95em;
+            padding: 18px 12px;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            margin-top: 18px;
+        }
+
+        .footer span {
+            opacity: 0.9;
         }
 
         @media (max-width: 768px) {
+            body {
+                padding: 24px 12px;
+            }
+
+            .container {
+                border-radius: 18px;
+            }
+
             .header {
-                padding: 40px 20px;
+                padding: 28px 20px 22px;
+            }
+
+            .logo-row {
+                gap: 10px;
+            }
+
+            .logo-icon {
+                width: 36px;
+                height: 36px;
+                font-size: 1.4rem;
             }
 
             .header h1 {
-                font-size: 2em;
+                font-size: 1.5rem;
+            }
+
+            .header h2 {
+                font-size: 0.85rem;
             }
 
             .content {
-                padding: 30px 20px;
+                padding: 24px 20px 20px;
             }
 
             .section h2 {
-                font-size: 1.5em;
+                font-size: 1.15rem;
             }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <h1>🧸 TeddyBuddy AI</h1>
-            <h2>Privacy Policy</h2>
-            <p class="effective-date">Effective Date: 06 December 2025</p>
-        </div>
-
-        <div class="content">
-            <div class="intro">
-                <p><strong>TeddyBuddy AI</strong> ("we", "our", "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, store, and protect your information when you use our mobile application ("App").</p>
-                <p style="margin-top: 15px;"><strong>By using TeddyBuddy AI, you agree to the collection and use of information in accordance with this policy.</strong></p>
-            </div>
-
-            <div class="section">
-                <h2>1. Information We Collect</h2>
-                <p>We collect the following types of information:</p>
-
-                <h3>a) Personal Information</h3>
-                <p>When you sign in using:</p>
-                <ul>
-                    <li>Phone number (OTP login)</li>
-                    <li>Google account authentication</li>
-                </ul>
-                <p>We may collect:</p>
-                <ul>
-                    <li>Name</li>
-                    <li>Email address</li>
-                    <li>Phone number</li>
-                    <li>Profile picture (if available through Google)</li>
-                </ul>
-
-                <h3>b) Chat & Message Data </h3>
-                <p>We store:</p>
-                <ul>
-                    <li>Messages you send and receive within the app</li>
-                    <li>AI-generated responses</li>
-                </ul>
-                <p>These messages are stored securely to:</p>
-                <ul>
-                    <li>Provide chat functionality</li>
-                    <li>Improve app features</li>
-                    <li>Maintain conversation history</li>
-                </ul>
-
-                <h3>c) Automatically Collected Information</h3>
-                <p>We may collect:</p>
-                <ul>
-                    <li>Device type</li>
-                    <li>Operating system</li>
-                    <li>App version</li>
-                    <li>Crash logs and performance data (for app improvement)</li>
-                </ul>
-            </div>
-
-            <div class="section">
-                <h2>2. Data We Currently Do Not Collect (Future-Safe)</h2>
-                <p>At this time, TeddyBuddy AI does not collect the following types of data:</p>
-                <ul>
-                    <li>Location data</li>
-                    <li>Camera data</li>
-                    <li>Microphone data</li>
-                    <li>Contacts</li>
-                    <li>Financial or payment information</li>
-                </ul>
-
-                <div class="highlight-box">
-                    <p><strong>However, we may introduce features in the future that require access to some of this data. If this happens:</strong></p>
-                    <ul>
-                        <li>Users will be clearly informed before any data is collected</li>
-                        <li>Explicit user consent will always be required</li>
-                        <li>App permissions will be requested transparently</li>
-                        <li>This Privacy Policy will be updated accordingly</li>
-                        <li>Users will always have the option to allow or deny such permissions</li>
-                    </ul>
+    <div class="page-wrapper">
+        <div class="container">
+            <header class="header">
+                <div class="header-inner">
+                    <div class="logo-row">
+                        <div class="logo-icon">🧸</div>
+                        <div>
+                            <h1>TeddyBuddy AI</h1>
+                            <h2>Privacy Policy</h2>
+                        </div>
+                    </div>
+                    <p class="effective-date">Effective Date: 06 December 2025</p>
                 </div>
-            </div>
+            </header>
 
-            <div class="section">
-                <h2>3. How We Use Your Information</h2>
-                <p>We use your information to:</p>
-                <ul>
-                    <li>Authenticate users</li>
-                    <li>Provide chat and messaging services</li>
-                    <li>Maintain user accounts</li>
-                    <li>Improve app performance</li>
-                    <li>Fix bugs and ensure security</li>
-                    <li>Communicate important updates</li>
-                </ul>
-            </div>
+            <main class="content">
+                <section class="intro">
+                    <p><strong>TeddyBuddy AI</strong> ("we", "our", "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, store, and protect your information when you use our mobile application ("App").</p>
+                    <p><strong>By using TeddyBuddy AI, you agree to the collection and use of information in accordance with this policy.</strong></p>
+                </section>
 
-            <div class="section">
-                <h2>4. Data Storage & Security</h2>
-                <p>All user data is stored securely using industry-standard security measures.</p>
-                <p>Messages and authentication data are protected using encryption and secure servers.</p>
-                <p>We take reasonable steps to protect your information, but no method of transmission over the internet is 100% secure.</p>
-            </div>
+                <section class="section">
+                    <h2>1. Information We Collect</h2>
+                    <p>We collect the following types of information:</p>
 
-            <div class="section">
-                <h2>5. Data Sharing</h2>
-                <p><strong>We do not sell, rent, or trade your personal data to third parties.</strong></p>
-                <p>We may share data only when:</p>
-                <ul>
-                    <li>Required by law</li>
-                    <li>Necessary to protect our legal rights</li>
-                    <li>Needed to prevent fraud or abuse</li>
-                </ul>
-            </div>
+                    <h3>a) Personal Information</h3>
+                    <p>When you sign in using:</p>
+                    <ul>
+                        <li>Phone number (OTP login)</li>
+                        <li>Google account authentication</li>
+                    </ul>
+                    <p>We may collect:</p>
+                    <ul>
+                        <li>Name</li>
+                        <li>Email address</li>
+                        <li>Phone number</li>
+                        <li>Profile picture (if available through Google)</li>
+                    </ul>
 
-            <div class="section">
-                <h2>6. Third-Party Services</h2>
-                <p>We use trusted third-party services only for:</p>
-                <ul>
-                    <li>Google Authentication</li>
-                    <li>App performance monitoring</li>
-                </ul>
-                <p>These services have their own privacy policies and comply with industry standards.</p>
-            </div>
+                    <h3>b) Chat &amp; Message Data</h3>
+                    <p>We store:</p>
+                    <ul>
+                        <li>Messages you send and receive within the app</li>
+                        <li>AI-generated responses</li>
+                    </ul>
+                    <p>These messages are stored securely to:</p>
+                    <ul>
+                        <li>Provide chat functionality</li>
+                        <li>Improve app features</li>
+                        <li>Maintain conversation history</li>
+                    </ul>
 
-            <div class="section">
-                <h2>7. Data Retention</h2>
-                <p>We retain your data only for as long as your account is active.</p>
-                <p>If you delete your account, your personal data and chat data will be permanently removed from our systems within a reasonable time, unless legally required to retain it.</p>
-            </div>
+                    <h3>c) Automatically Collected Information</h3>
+                    <p>We may collect:</p>
+                    <ul>
+                        <li>Device type</li>
+                        <li>Operating system</li>
+                        <li>App version</li>
+                        <li>Crash logs and performance data (for app improvement)</li>
+                    </ul>
+                </section>
 
-            <div class="section">
-                <h2>8. Children's Privacy</h2>
-                <p><strong>TeddyBuddy AI is not intended for children under the age of 13.</strong></p>
-                <p>We do not knowingly collect personal information from children. If we discover that a child has provided us with personal information, we will delete it immediately.</p>
-            </div>
+                <section class="section">
+                    <h2>2. Data We Currently Do Not Collect (Future-Safe)</h2>
+                    <p>At this time, TeddyBuddy AI does not collect the following types of data:</p>
+                    <ul>
+                        <li>Location data</li>
+                        <li>Camera data</li>
+                        <li>Microphone data</li>
+                        <li>Contacts</li>
+                        <li>Financial or payment information</li>
+                    </ul>
 
-            <div class="section">
-                <h2>9. User Rights</h2>
-                <p>You have the right to:</p>
-                <ul>
-                    <li>Access your data</li>
-                    <li>Request correction of inaccurate data</li>
-                    <li>Request deletion of your account and data</li>
-                </ul>
-                <p>You may contact us to exercise these rights.</p>
-            </div>
+                    <div class="highlight-box">
+                        <p><strong>However, we may introduce features in the future that require access to some of this data. If this happens:</strong></p>
+                        <ul>
+                            <li>Users will be clearly informed before any data is collected</li>
+                            <li>Explicit user consent will always be required</li>
+                            <li>App permissions will be requested transparently</li>
+                            <li>This Privacy Policy will be updated accordingly</li>
+                            <li>Users will always have the option to allow or deny such permissions</li>
+                        </ul>
+                    </div>
+                </section>
 
-            <div class="section">
-                <h2>10. Changes to This Privacy Policy</h2>
-                <p>We may update this Privacy Policy from time to time.</p>
-                <p>Any changes will be posted on this page with an updated effective date.</p>
-            </div>
+                <section class="section">
+                    <h2>3. How We Use Your Information</h2>
+                    <p>We use your information to:</p>
+                    <ul>
+                        <li>Authenticate users</li>
+                        <li>Provide chat and messaging services</li>
+                        <li>Maintain user accounts</li>
+                        <li>Improve app performance</li>
+                        <li>Fix bugs and ensure security</li>
+                        <li>Communicate important updates</li>
+                    </ul>
+                </section>
 
-            <div class="contact-box">
-                <h2>11. Contact Us</h2>
-                <p>If you have any questions about this Privacy Policy, you can contact us at:</p>
-                <div class="contact-info">📧 Email: anoop.a.goudar@gmail.com</div>
-                <div class="contact-info">🌐 App Name: TeddyBuddy AI</div>
-            </div>
+                <section class="section">
+                    <h2>4. Data Storage &amp; Security</h2>
+                    <p>All user data is stored securely using industry-standard security measures.</p>
+                    <p>Messages and authentication data are protected using encryption and secure servers.</p>
+                    <p>We take reasonable steps to protect your information, but no method of transmission over the internet is 100% secure.</p>
+                </section>
+
+                <section class="section">
+                    <h2>5. Data Sharing</h2>
+                    <p><strong>We do not sell, rent, or trade your personal data to third parties.</strong></p>
+                    <p>We may share data only when:</p>
+                    <ul>
+                        <li>Required by law</li>
+                        <li>Necessary to protect our legal rights</li>
+                        <li>Needed to prevent fraud or abuse</li>
+                    </ul>
+                </section>
+
+                <section class="section">
+                    <h2>6. Third-Party Services</h2>
+                    <p>We use trusted third-party services only for:</p>
+                    <ul>
+                        <li>Google Authentication</li>
+                        <li>App performance monitoring</li>
+                    </ul>
+                    <p>These services have their own privacy policies and comply with industry standards.</p>
+                </section>
+
+                <section class="section">
+                    <h2>7. Data Retention</h2>
+                    <p>We retain your data only for as long as your account is active.</p>
+                    <p>If you delete your account, your personal data and chat data will be permanently removed from our systems within a reasonable time, unless legally required to retain it.</p>
+                </section>
+
+                <section class="section">
+                    <h2>8. Children's Privacy</h2>
+                    <p><strong>TeddyBuddy AI is not intended for children under the age of 13.</strong></p>
+                    <p>We do not knowingly collect personal information from children. If we discover that a child has provided us with personal information, we will delete it immediately.</p>
+                </section>
+
+                <section class="section">
+                    <h2>9. User Rights</h2>
+                    <p>You have the right to:</p>
+                    <ul>
+                        <li>Access your data</li>
+                        <li>Request correction of inaccurate data</li>
+                        <li>Request deletion of your account and data</li>
+                    </ul>
+                    <p>You may contact us to exercise these rights.</p>
+                </section>
+
+                <section class="section">
+                    <h2>10. Changes to This Privacy Policy</h2>
+                    <p>We may update this Privacy Policy from time to time.</p>
+                    <p>Any changes will be posted on this page with an updated effective date.</p>
+                </section>
+
+                <section class="contact-box">
+                    <h2>11. Contact Us</h2>
+                    <p>If you have any questions about this Privacy Policy, you can contact us at:</p>
+                    <div class="contact-info">
+                        📧 Email:
+                        <a href="mailto:anoop.a.goudar@gmail.com">anoop.a.goudar@gmail.com</a>
+                    </div>
+                    <div class="contact-info">
+                        🌐 App Name: TeddyBuddy AI
+                    </div>
+                </section>
+            </main>
         </div>
 
-        <div class="footer">
-            <p>&copy; 2025 TeddyBuddy AI. All rights reserved.</p>
-        </div>
+        <footer class="footer">
+            <span>&copy; 2025 TeddyBuddy AI. All rights reserved.</span>
+        </footer>
     </div>
 </body>
 </html>
